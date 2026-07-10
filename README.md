@@ -1,3 +1,9 @@
+---
+title: "Python and Git Class Assignments Setup Tutorial"
+subtitle: "East Texas A&M University - Commerce"
+date: "Summer 2026"
+---
+
 # Getting Started with Python and Git for Class Assignments
 
 Programming environment and assignment configuration instructions for 
@@ -176,7 +182,7 @@ If a Python interpreter is available on your system `PATH`, you can
 check which version you have by running:
 
 ```bash
-$ python --version
+$ python3 --version
 3.14.6
 ```
 
@@ -492,13 +498,14 @@ for Windows, MacOS or Linux.  And most of the following instructions
 should apply, though some may be specific to setting up in a Windows
 environment.
 
-Once installed, open `VSCode` and go to the **Extensions** (left side bar).
-Search for "Python" in the extensions marketplace.  There will be
-many useful extensions here for Python development.  Find the one
-simply named "Python" published by "Microsoft".  This is the official 
-extension pack, and if you select and install it, it will install
-"Python", "Python Debugger" "Pylance" and "Python Environments" extensions,
-all of which you might find useful to have for your assignments.
+Once installed, open `VSCode` and go to the **Extensions** (left side
+bar). Search for "Python" in the extensions marketplace.  There will be
+many useful extensions here for Python development.  Find the one simply
+named "Python" published by "Microsoft (microsoft.com)".  This is the
+official extension pack, and if you select and install it, it will
+install "Python", "Python Debugger" "Pylance" and "Python Environments"
+extensions, all of which you might find useful to have for your
+assignments.
 
 **Note**: The "Python Environments" extension can be helpful for finding
 and managing different Python distributions you might have available, and

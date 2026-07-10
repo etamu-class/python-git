@@ -1,0 +1,34 @@
+---
+title: "Python and Git Class Assignments Setup Tutorial"
+author: Derek Harter
+date:  Summer 2026
+theme: Madrid
+
+toc: false
+section-titles: false
+output: 
+	beamer_presentation:
+    keep_tex: true
+classoption: aspectratio=169
+header-includes:
+  - \logo{\includegraphics[scale=0.25]{figures/etamu-logo}}
+  - \title [Memory]{My Title}
+  - \institute[East Texas A\&M]{Department of Computer Science \\East Texas A\&M University}
+  - \usepackage[backend=biber, style=apa]{biblatex}
+  - \addbibresource{slides.bib}
+  - \hypersetup{allcolors=blue, colorlinks=true}
+  - \usepackage[percent]{overpic}
+---
+
+
+
+# 
+\title{Class Live Help/Lecture Session}
+\maketitle
+
+# 
+\title{Title 02 Example Second Title}
+\maketitle
+
+
+

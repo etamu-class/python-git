@@ -1,0 +1,8 @@
+*.pyc
+.ipynb_checkpoints/*
+**/.ipynb_checkpoints/*
+
+slides/*.md
+slides/*.tex
+slides/*.png
+.snakemake
