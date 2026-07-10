@@ -4,8 +4,9 @@ author: Derek Harter
 date:  Summer 2026
 theme: Madrid
 
-toc: false
 section-titles: false
+toc: false
+toc_depth: 2
 output: 
 	beamer_presentation:
     keep_tex: true
@@ -22,13 +23,254 @@ header-includes:
 
 
 
-# 
-\title{Class Live Help/Lecture Session}
+# Prerequisites
+
+- A computer or laptop, not too old, with Windows 10/11, MacOS or Linux
+  - It may be possible to use Android / iOS / ChromeBook, but not
+    recommended nor supported
+- Resource requirements are relatively modest to run Python interpreter
+  - 4GB of memory, probably could work ok with less
+  - Probably need only 5+GB of free disk space or less for Python and
+    `git` / `ssh` tools.  But assignments may need more beyond that.
+
+#
+\title{Install a Python Interpreter}
 \maketitle
 
-# 
-\title{Title 02 Example Second Title}
+# Install a Python Interpreter (Windows OS)
+
+- Recommend downloading and installing official [python.org](https://www.python.org/downloads/)
+  package manager and distribution into Windows systems.
+  - [Anaconda Python Distribution](https://www.anaconda.com/download) 
+    is also  a good choice, more features but more complex setup.
+- Make sure using Python 3.
+  - Should use Python 3.14 or newer
+  - (as old as 3.11 or 3.12 might be acceptable).
+
+|                 |                                     |
+|-----------------|-------------------------------------|
+| python.org      | `https://www.python.org/downloads`  |
+| Anaconda Python | `https://www.anaconda.com/download` |
+
+# Install a Python Interpreter (MacOS)
+
+- Recommend using [Homebrew](https://brew.sh/) 
+  MacOS package manager to install Python 3 interpreter and `git` / `ssh` tools if needed.
+
+```bash
+$ xcode-select --install
+$ /bin/bash -c "$(curl -fsSL 
+      https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+$ brew install python
+```
+
+|          |                   |
+|----------|-------------------|
+| Homebrew | `https://brew.sh` |
+
+
+\section{Install a Python Interpreter}
+# Install a Python Interpreter (Linux OS)
+
+- Probably the installed system default Python interpreter will work.
+- Use system package manager (`apt`, `yum`) if not and need to install.
+- On Linux systems, the interpreter executable may be named `python3`
+  instead of simply `python`
+
+# Post Python Installation Checks and Tests
+
+- On any system, you need to be able to run the Python 3 interpreter
+  from a command line terminal, and it should be a relatively recent version
+  of Python, e.g. 3.14.
+- See links in written tutorial for how to open a command line terminal
+  in Windows and MacOS if you are unfamiliar.
+- First check if a python interpreter is on your path, and if so where
+  it is located, using `where` or `which`
+```bash
+# Windows systems
+$ where python
+
+# Linux or MacOs systems
+$ which python
+```
+- If available, check which version your default Python 3 is
+```bash
+$ python --version
+3.14.6
+```
+
+\section{Install git and ssh Tools}
+
+#
+\title{Install `git` and `ssh` Tools}
 \maketitle
 
+# Install `git` and `ssh` Tools (Windows OS)
+
+- Windows OS does not come preinstalled with `git` nor `ssh` tools.
+- Install from the official [Git - Install for Windows](https://git-scm.com/install/windows)
+  download.
+  - Override the default branch name and use 'main'
+  - Ensure that "Use bundled OpenSSH" option is selected as you most likely
+    do not have `ssh` tools on a Windows system yet.
+  - Use "Checkout as-is, commit as-is" for line ending conversions.
+
+|                         |                                         |
+|-------------------------|-----------------------------------------|
+| Git - Install for Windows | `https://git-scm.com/install/windows` |
+
+# Install `git` and `ssh` tools (MacOS)
+
+- You can install from the official [Git - Install for MacOS](https://git-scm.com/install/mac).
+- Or if you already have `Homebrew` prefer to use It
+```bash
+$ brew install git
+```
+
+|                         |                                   |
+|-------------------------|-----------------------------------|
+| Git - Install for MacOS | `https://git-scm.com/install/mac` |
 
 
+# Install `git` and `ssh` tools (Linux OS)
+
+- `git` and `ssh` tools will most likely already be installed and available
+- If not, try installing the `build-essential` package
+
+```bash
+$ sudo apt install build-essential
+```
+
+
+# `git` and `ssh` Post Install Tests
+
+- Test that you can access `git` and `ssh` from the command line.
+- On Windows systems use the `where` command
+```bash
+C:\Users\etamustudent> where git
+C:\Program Files\Git\cmd\git.exe
+
+C:\Users\etamustudent> git --version
+git version 2.55.0.windows.2
+
+C:\Users\etamustudent>where ssh
+C:\Windows\System32\OpenSSH\ssh.exe
+
+C:\Users\etamustudent>ssh -V
+OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2
+```
+
+# `git` and `ssh` Post Install Tests
+
+- On Linux and MacOs, use `which`, and remember the interpreter may be 
+  named `python3` instead of `python`
+```bash
+$ which git
+/usr/bin/git
+
+$ git --version
+git version 2.53.0
+
+$ which ssh
+/usr/bin/ssh
+
+$ ssh -V
+OpenSSH_10.2p1 Ubuntu-2ubuntu3.2, OpenSSL 3.5.5 27 Jan 2026
+```
+
+# `git` Global Configuration
+
+- On all systems you should set up basic `git` global configurations
+- See [Customizing Git - Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+  for a more detailed discussion.
+
+```bash
+C:\Users\etamustudent> git config --global user.name "ETAMU Student"
+
+C:\Users\etamustudent> git config --global user.email "estudent@leomail.etamu.edu"
+
+C:\Users\etamustudent> git config --list
+...
+user.name=ETAMU Student
+user.email=estudent@leomail.etamu.edu
+```
+
+- You can list your global `git` configuration using the `--list` flag.
+- Use it to check that you correctly set your `user.name` and `user.email`
+
+
+# Create GitHub Account and Set Up `ssh` Keypair
+
+- Create a GitHub account for yourself  [GitHub.com](https://github.com/)
+  - Use your Leo Mail e-mail address as primary e-mail
+  - Ensure that your `git` config `user.email` matches your GitHub
+    primary email address.
+- For all OS, generate a default `ssh` public / private Keypair
+
+\tiny
+```bash
+C:\Users\etamustudent> ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\etamustudent/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\etamustudent/.ssh/id_ed25519
+Your public key has been saved in C:\Users\etamustudent/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:LeDfO85S+F4HGAhzD73pikAAVHlZYgUGlbUYWdiqI4s etamustudent@windemo
+The key's randomart image is:
++--[ED25519 256]--+
+|oo.o+B#=o.       |
+|  ..o*+=.+.      |
+|   ...o.. oo     |
+|    .o . .oo     |
+|   .. . Soo .    |
+| . o.  ..oo  .   |
+|. o .. ..+. . .  |
+|E.    . o.oo .   |
+|         +=.     |
++----[SHA256]-----+
+```
+
+# Create GitHub Account and Set Up `ssh` Keypair
+
+- We generated key into `C:\Users\etamustudent\.ssh\id_ed25519` file
+  - Public key is in `id_ed25519.pub`
+- Don't use a passphrase (just hit return)
+- Copy the public key, and create a **New SSH Key** on GitHub and paste
+  your key.
+**IMPORTANT** Confirm you can authenticate with your key to GitHub
+
+\tiny
+```bash
+C:\Users\etamustudent> ssh git@github.com
+The authenticity of host 'github.com (140.82.113.4)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+PTY allocation request failed on channel 0
+Hi etamustudent! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+```
+
+#
+\title{Text Editors / IDE for Python Programming Assignments}
+\maketitle
+
+# Text Editors / IDE for Python Programming Assignments
+
+- You will need a programming text editor to edit and create assignments.
+  - Popular choices include
+    - Notepad++
+    - Sublime Text
+    - TextMate
+
+- We recommended installing VSCode if you don't have a preference
+  - A full blown extendable IDE
+  - Built in gui for `git` revision control management
+  - Install the "Python" extension pack to get main functions needed.
+
+|                    |                                          |
+|--------------------|------------------------------------------|
+| Visual Studio Code | `https://code.visualstudio.com/download` |

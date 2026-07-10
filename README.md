@@ -182,7 +182,7 @@ If a Python interpreter is available on your system `PATH`, you can
 check which version you have by running:
 
 ```bash
-$ python3 --version
+$ python --version
 3.14.6
 ```
 
@@ -428,7 +428,7 @@ repositories) that you could do with this key.
 To add a new key on GitHub, open up your GitHub account **Settings** (upper
 right hand side of GitHub, pull down your User navigation and select **Settings**).
 In your GitHub **Settings**, find your **SSH and GPG keys** settings.
-From here you should select the button to add a **New SSH key*.
+From here you should select the button to add a **New SSH key**.
 
 Copy your public key from your file and paste it into the **Key**.  You
 should give each of your keys a **Title** that will help you remember its
@@ -524,6 +524,7 @@ e.g. the "Global" python environment, among other things.
 
 - [How to open a Command Prompt in Windows 10, 11](https://www.geeksforgeeks.org/techtips/open-the-command-prompt-in-windows/)
 - [Download Python from python.org](https://www.python.org/downloads/)
+- [Anaconda Python Distribution](https://www.anaconda.com/download)
 - [Homebrew](https://brew.sh/)
 - [How to use the Terminal command line in MacOS](https://macpaw.com/how-to/use-terminal-on-mac)
 - [Installing Python 3 on Mac OS X](https://docs.python-guide.org/starting/install3/osx/)
