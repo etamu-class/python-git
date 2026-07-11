@@ -191,7 +191,7 @@ For assignments in this class, you probably should not be using a
 version older than 3.11, and as of the writing of this guide version
 3.14.6 is the most recent Python 3 version available.
 
-# Install `git` Tools
+# Install `git` and `ssh` Tools
 
 In addition to a Python 3 interpreter, you may be required to have
 the `git` revision control tools available on your system to
