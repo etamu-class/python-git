@@ -104,27 +104,81 @@ You can read
 [Installing Python 3 on Mac OS X](https://docs.python-guide.org/starting/install3/osx/)
 for details on installing Python 3 on MacOS.  Following those instructions,
 you would perform the following commands in a Terminal window to
-install Xcode, Homebrew and Python 3
+install Xcode, Homebrew and Python 3.
 
-**TODO**: I haven't actually run these on a real MacOS system, need
-to confirm and correct actual command line commands needed here.
+For recent versions of MacOS, it appears that you only need to install
+the `xcode-select` tools in order to get the needed tools to run
+and install Homebrew.  This may differ on older MacOS versions, so if
+Homebrew still has issues, trying installing the full `XCode` IDE or the
+Command Line Tools mentioned in that link.
+
+In any case, first try install the select xcode command line tools like this:
 
 ```bash
-$ xcode-select --install
-$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-$ brew install python
+etamustudent@macdemo ~ % xcode-select --install
 ```
 
-After you think you have a Python interpreter installed, check that it
-is available from a Terminal like this:
+Once prerequisites for Homebrew are satisfied, the following command
+line should usually work fine to download and run the Homebrew installer.
 
 ```bash
-$ which python
-/Users/etamuuser/bin/python
+etamustudent@macdemo ~ % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
 
-$ python --version
+The instructions mention that you may need to update your `PATH` environment
+variable so that you correctly have the `brew` package manager, and
+also ultimately the Python interpreter in your default `PATH`.  Homebrew
+appears to install tools in the `/usr/local/bin` directory.  So to ensure
+`brew` is visible, and that tools it installs are available in a terminal,
+you need to modify your `PATH` in your `.zprofile` file.  You can edit
+this and add by hand, or perform something like the following from
+a command line:
+
+```bash
+etamustudent@macdemo ~ % echo "export PATH=/usr/local/bin:$PATH" >> ~/.zprofile
+```
+
+This command is simply appending the `export` to update your `PATH`
+the the end of your `.zprofile` file (make sure to use `>>` so you are 
+appending the file, not overwriting it).  If you are not finding the
+`brew` or `python3` command after updating your `PATH`, you may need
+to exit your current terminal session and restart it to pick up the
+modifications you made to your `PATH`.
+
+Once your path is correct, you should be able to run `brew` package
+manager commands.  Install the Python interpreter by doing:
+
+```bash
+etamustudent@macdemo ~ % brew install python
+```
+
+
+Again if there are problems here, you may need to install further
+prerequisites for Homebrew, and/or you may also need to check that
+`/usr/local/bin` is in your path and that you are able to find
+the `brew` command to run it.
+
+At this point, you should test that the Python interpreter is in your
+`PATH` and that you have the expected version installed.  Perform
+the following to check.  In MacOS it appears that there will
+not be a `python` command, so you will need to use `python3` to refer
+to the Python interpreter:
+
+```bash
+etamustudent@macdemo ~ % which python3
+/usr/local/bin/python3
+
+etamustudent@macdemo ~ % python3 --version
 Python 3.14.6
 ```
+
+As you can see, if you are using Homebrew you should find that the
+Python 3 interpreter is installed in the `/usr/local/bin` directory.
+And if you are reading these instructions, make sure you are using
+version 3.14 or an even newer version of Python.  If you see version
+3.9 or something older like that, you are probably running the system
+installed version of Python, which may cause you problems when
+attempting to do assignments for the class.
 
 ## Linux
 
@@ -229,6 +283,11 @@ are available from a normal Command Prompt, see the general section
 below on testing and configuring `git` and `ssh`.
 
 ## MacOS
+
+First of all, if you installed Homebrew and the XCode select tools
+that it needs, you probably already have `git` and `ssh` tools installed.
+You should skip down to checking post install steps, to see if the tools
+are already installed, and if so what versions you have.
 
 You can install from the official [Git - Install for MacOS](https://git-scm.com/install/mac).
 

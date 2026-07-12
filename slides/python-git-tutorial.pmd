@@ -57,10 +57,10 @@ header-includes:
 - Recommend using [Homebrew](https://brew.sh/) 
   MacOS package manager to install Python 3 interpreter and `git` / `ssh` tools if needed.
 
+\tiny
 ```bash
 $ xcode-select --install
-$ /bin/bash -c "$(curl -fsSL 
-      https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 $ brew install python
 ```
 
