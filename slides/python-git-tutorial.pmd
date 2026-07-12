@@ -3,6 +3,11 @@ title: "Python and Git Class Assignments Setup Tutorial"
 author: Derek Harter
 date:  Summer 2026
 theme: Madrid
+colorlinks: true
+linkcolor: gray
+filecolor: gray
+urlcolor: blue
+citecolor: blue
 
 section-titles: false
 toc: false
@@ -17,7 +22,7 @@ header-includes:
   - \institute[East Texas A\&M]{Department of Computer Science \\East Texas A\&M University}
   - \usepackage[backend=biber, style=apa]{biblatex}
   - \addbibresource{slides.bib}
-  - \hypersetup{allcolors=blue, colorlinks=true}
+  - \hypersetup{colorlinks=true, linkcolor=gray, filecolor=gray, urlcolor=blue, citecolor=blue}
   - \usepackage[percent]{overpic}
 ---
 
@@ -88,14 +93,14 @@ $ brew install python
   it is located, using `where` or `which`
 ```bash
 # Windows systems
-$ where python
+$ where python3
 
 # Linux or MacOs systems
-$ which python
+$ which python3
 ```
 - If available, check which version your default Python 3 is
 ```bash
-$ python --version
+$ python3 --version
 3.14.6
 ```
 

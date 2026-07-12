@@ -39,6 +39,11 @@ these tools.
 
 # Install a Python Interpreter
 
+The Video Tutorial 
+[C01: Python and Git Class Assignments Setup Tutoiral](https://www.youtube.com/watch?v=SMxbJLwkK1U&list=PLO5ci0t47MT)
+has a discussion and examples
+of all of the materials presented below in this tutorial.
+
 You will need a Python 3 interpreter installed and available to be
 run from a command line in your system `PATH` to work on assignments
 for this class.  There are many different ways to install suitable
@@ -216,10 +221,10 @@ that the Python interpreter is available.
 
 ```bash
 # Windows systems
-$ where python
+$ where python3
 
 # Linux or MacOs systems
-$ which python
+$ which python3
 ```
 
 The command in a Windows command prompt is named `where` but it is called
@@ -236,7 +241,7 @@ If a Python interpreter is available on your system `PATH`, you can
 check which version you have by running:
 
 ```bash
-$ python --version
+$ python3 --version
 3.14.6
 ```
 
